@@ -1,0 +1,12 @@
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Domain\bin\Debug\net6.0\TSS.Domain.deps.json
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Domain\bin\Debug\net6.0\TSS.Domain.dll
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Domain\bin\Debug\net6.0\TSS.Domain.pdb
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Domain\obj\Debug\net6.0\TSS.Domain.csproj.AssemblyReference.cache
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Domain\obj\Debug\net6.0\TSS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Domain\obj\Debug\net6.0\TSS.Domain.AssemblyInfoInputs.cache
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Domain\obj\Debug\net6.0\TSS.Domain.AssemblyInfo.cs
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Domain\obj\Debug\net6.0\TSS.Domain.csproj.CoreCompileInputs.cache
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Domain\obj\Debug\net6.0\TSS.Domain.dll
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Domain\obj\Debug\net6.0\refint\TSS.Domain.dll
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Domain\obj\Debug\net6.0\TSS.Domain.pdb
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Domain\obj\Debug\net6.0\ref\TSS.Domain.dll

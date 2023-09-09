@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "4aGdxKRSlcIAO/REDh+lV3JbUjJ4tjfz5PvDIqv/TAA=",
+  "Source": "TSS.API",
+  "BasePath": "_content/TSS.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

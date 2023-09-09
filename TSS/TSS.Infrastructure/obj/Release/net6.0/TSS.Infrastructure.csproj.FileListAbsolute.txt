@@ -1,0 +1,17 @@
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Infrastructure\bin\Release\net6.0\TSS.Infrastructure.deps.json
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Infrastructure\bin\Release\net6.0\TSS.Infrastructure.runtimeconfig.json
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Infrastructure\bin\Release\net6.0\TSS.Infrastructure.dll
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Infrastructure\bin\Release\net6.0\TSS.Infrastructure.pdb
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Infrastructure\bin\Release\net6.0\TSS.Domain.dll
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Infrastructure\bin\Release\net6.0\TSS.Domain.pdb
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Infrastructure\obj\Release\net6.0\TSS.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Infrastructure\obj\Release\net6.0\TSS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Infrastructure\obj\Release\net6.0\TSS.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Infrastructure\obj\Release\net6.0\TSS.Infrastructure.AssemblyInfo.cs
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Infrastructure\obj\Release\net6.0\TSS.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Infrastructure\obj\Release\net6.0\TSS.Infrastructure.csproj.CopyComplete
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Infrastructure\obj\Release\net6.0\TSS.Infrastructure.dll
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Infrastructure\obj\Release\net6.0\refint\TSS.Infrastructure.dll
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Infrastructure\obj\Release\net6.0\TSS.Infrastructure.pdb
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Infrastructure\obj\Release\net6.0\TSS.Infrastructure.genruntimeconfig.cache
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Infrastructure\obj\Release\net6.0\ref\TSS.Infrastructure.dll

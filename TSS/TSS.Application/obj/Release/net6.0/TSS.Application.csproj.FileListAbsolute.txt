@@ -1,0 +1,5 @@
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Application\obj\Release\net6.0\TSS.Application.csproj.AssemblyReference.cache
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Application\obj\Release\net6.0\TSS.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Application\obj\Release\net6.0\TSS.Application.AssemblyInfoInputs.cache
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Application\obj\Release\net6.0\TSS.Application.AssemblyInfo.cs
+C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.Application\obj\Release\net6.0\TSS.Application.csproj.CoreCompileInputs.cache
