@@ -16,5 +16,5 @@ public class ProjectDto
     public DateTimeOffset? LastModifiedOn { get; set; }
     public bool IsDeleted { get; set; }
     public UserDto? User { get; set; }
-    public List<TicketsDto>? Tickets { get; set; }
+    public List<TicketDto>? Tickets { get; set; }
 }

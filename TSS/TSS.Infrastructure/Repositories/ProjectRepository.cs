@@ -56,7 +56,7 @@ namespace TSS.Infrastructure.Repositories
         public async Task<bool> DeleteProjectByUserIdAsync(string userId, CancellationToken cancellationToken = default)
         {
             var project = await _tssDbContext.Projects.FirstOrDefaultAsync(x => x.ProjectAssignedUser == Guid.Parse(userId), cancellationToken);
-            if(project != null)
+            if (project != null)
             {
                 return await DeleteProjectByIdAsync(project);
             }
@@ -68,9 +68,12 @@ namespace TSS.Infrastructure.Repositories
         /// </summary>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public IQueryable<Projects> FilterProjectQueryAsync(CancellationToken cancellationToken = default)
+        public IQueryable<Projects> FilterProjectQuery(CancellationToken cancellationToken = default)
         {
-            return _tssDbContext.Projects.Include(i => i.Tickets).Where(x => !x.IsDeleted && x.Status == UserStatus.Active);
+            return _tssDbContext.Projects
+                        .Include(i => i.Tickets)
+                        .Include(i => i.User)
+                        .Where(x => !x.IsDeleted && x.Status == UserStatus.Active);
         }
 
         /// <summary>

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using TSS.Domain.Core.Repositories;
 using TSS.Domain.Entities;
+using TSS.Domain.Enums;
 using TSS.Infrastructure.Data;
 #endregion
 
@@ -58,6 +59,15 @@ namespace TSS.Infrastructure.Repositories
         {
             var ticket = await _tssDbContext.Tickets.FirstOrDefaultAsync(x => x.Id == ticketId, cancellationToken);
             return ticket;
+        }
+
+        /// <summary>
+        /// Gets the tickets query.
+        /// </summary>
+        /// <returns></returns>
+        public IQueryable<Tickets> GetTicketsQuery()
+        {
+            return _tssDbContext.Tickets;
         }
 
         /// <summary>

@@ -21,7 +21,7 @@ namespace TSS.Domain.Entities
         public DateTimeOffset CreatedOn { get; set; }
         public Guid? LastModifiedBy { get; set; }
         public DateTimeOffset? LastModifiedOn { get; set; }
-        public bool IsDeleted { get; set; }
+        public bool IsDeleted { get; set; } = false;
         public Users? User { get; set; }
         public ICollection<Tickets> Tickets { get; set; }
 

@@ -12,6 +12,8 @@ namespace TSS.Application
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IRoleService, RoleService>();
+            services.AddScoped<ITicketService, TicketService>();
+            services.AddScoped<IProjectService, ProjectService>();
         }
     }
 }

@@ -46,12 +46,24 @@ builder.Services.AddAuthorization();
 
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(option =>
+{
+    option.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+});
 builder.Services.ConfigureInfrastructure(configuration);
 builder.Services.ConfigureApplicationInjections();
 
+builder.Services.AddCors(option =>
+{
+    option.AddDefaultPolicy(_ =>
+    {
+        _.AllowAnyHeader().AllowAnyOrigin();
+    });
+});
+
 var app = builder.Build();
 
+app.UseCors();
 
 app.UseSwagger();
 app.UseSwaggerUI();

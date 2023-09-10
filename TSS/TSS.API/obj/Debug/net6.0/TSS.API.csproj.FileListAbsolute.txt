@@ -90,4 +90,3 @@ C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.API\obj\Debug\net6.0\refint
 C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.API\obj\Debug\net6.0\TSS.API.pdb
 C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.API\obj\Debug\net6.0\TSS.API.genruntimeconfig.cache
 C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.API\obj\Debug\net6.0\ref\TSS.API.dll
-C:\Users\BLACKBOX\Desktop\my-practicals\test\TSS\TSS.API\obj\Debug\net6.0\TSS.API.MvcApplicationPartsAssemblyInfo.cs

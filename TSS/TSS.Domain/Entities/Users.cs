@@ -27,7 +27,7 @@ namespace TSS.Domain.Entities
         public DateTimeOffset? LastModifiedOn { get; set; }
         public bool IsDeleted { get; set; }
         public Roles? Role { get; set; }
-        public ICollection<Projects> Projects { get; set; }
+        public ICollection<Projects>? Projects { get; set; }
     }
 }
 #endregion

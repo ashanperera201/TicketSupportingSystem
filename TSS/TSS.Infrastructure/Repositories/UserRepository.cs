@@ -29,7 +29,7 @@ namespace TSS.Infrastructure.Repositories
         /// <returns></returns>
         public async Task<Users?> GetUserByEmailAsync(string userEmail, CancellationToken cancellationToken = default)
         {
-            var user = await _tssDbContext.Users.Include(i => i.Role).FirstOrDefaultAsync(x => x.EmailId == userEmail, cancellationToken);
+            var user = await _tssDbContext.Users.Include(i => i.Role).Include(i => i.Projects).FirstOrDefaultAsync(x => x.EmailId == userEmail, cancellationToken);
             return user;
         }
 

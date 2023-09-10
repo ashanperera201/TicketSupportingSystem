@@ -54,8 +54,8 @@ namespace TSS.Application.Core.Services
 
                 if (tokenResult != null)
                 {
-                    var userId = tokenResult.Claims.FirstOrDefault(x => x.Type == "Id")?.Value?.ToString();
-                    var userEmail = tokenResult.Claims.FirstOrDefault(x => x.Type == "Email")?.Value?.ToString();
+                    var userId = tokenResult.Claims.FirstOrDefault(x => x.Type == "id")?.Value?.ToString();
+                    var userEmail = tokenResult.Claims.FirstOrDefault(x => x.Type == "email")?.Value?.ToString();
 
                     if (!string.IsNullOrEmpty(userId) && !string.IsNullOrEmpty(userEmail))
                     {
@@ -90,8 +90,8 @@ namespace TSS.Application.Core.Services
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim("Id", user.Id.ToString()),
-                    new Claim("Email", user.EmailId.ToString()),
+                    new Claim("id", user.Id.ToString()),
+                    new Claim("email", user.EmailId.ToString()),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
                 }),
                 Expires = DateTime.UtcNow.AddHours(3),

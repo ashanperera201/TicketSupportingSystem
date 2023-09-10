@@ -8,6 +8,11 @@ namespace TSS.Domain.Core.Repositories
     public interface ITicketRepository
     {
         /// <summary>
+        /// Gets the tickets query.
+        /// </summary>
+        /// <returns></returns>
+        public IQueryable<Tickets> GetTicketsQuery();
+        /// <summary>
         /// Saves the tickets asynchronous.
         /// </summary>
         /// <param name="tickets">The tickets.</param>

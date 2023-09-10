@@ -10,7 +10,7 @@ namespace TSS.Domain.Core.Repositories
         /// </summary>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public IQueryable<Projects> FilterProjectQueryAsync(CancellationToken cancellationToken = default);
+        public IQueryable<Projects> FilterProjectQuery(CancellationToken cancellationToken = default);
         /// <summary>
         /// Saves the project asynchronous.
         /// </summary>

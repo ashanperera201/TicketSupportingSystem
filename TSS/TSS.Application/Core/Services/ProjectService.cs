@@ -1,5 +1,6 @@
 ﻿#region References
 using TSS.Application.Core.Models.DTOs;
+using TSS.Application.Core.Models.Requests;
 using TSS.Application.Interfaces;
 using TSS.Domain.Core.Repositories;
 using TSS.Domain.Entities;
@@ -11,6 +12,10 @@ namespace TSS.Application.Core.Services
 {
     public class ProjectService : IProjectService
     {
+        /// <summary>
+        /// The token service
+        /// </summary>
+        private readonly ITokenService _tokenService;
         /// <summary>
         /// The entity mapper service
         /// </summary>
@@ -24,10 +29,11 @@ namespace TSS.Application.Core.Services
         /// </summary>
         /// <param name="projectRepository">The project repository.</param>
         /// <param name="entityMapperService">The entity mapper service.</param>
-        public ProjectService(IProjectRepository projectRepository, IEntityMapperService entityMapperService)
+        public ProjectService(IProjectRepository projectRepository, IEntityMapperService entityMapperService, ITokenService tokenService)
         {
             _projectRepository = projectRepository;
             _entityMapperService = entityMapperService;
+            _tokenService = tokenService;
         }
 
         /// <summary>
@@ -54,8 +60,24 @@ namespace TSS.Application.Core.Services
 
         public IEnumerable<ProjectDto>? FilterProjectQueryAsync(CancellationToken cancellationToken = default)
         {
-            var query = _projectRepository.FilterProjectQueryAsync(cancellationToken);
+            var query = _projectRepository.FilterProjectQuery(cancellationToken);
             return null;
+        }
+
+        /// <summary>
+        /// Gets the projects asynchronous.
+        /// </summary>
+        /// <param name="customerId">The customer identifier.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns></returns>
+        public List<ProjectDto>? GetAllProjects(string customerId, CancellationToken cancellationToken = default)
+        {
+            // TODO: MAP CUSTOMER ID LATER.
+            // TODO: IF USER IS ADMIN CHANGE THE LOGIC.
+            var user = _tokenService.DecodeUserToken()?.UserId?.ToString()!;
+            var projectsQuery = _projectRepository.FilterProjectQuery(cancellationToken);
+            var projects = projectsQuery.Where(x => x.ProjectAssignedUser == Guid.Parse(user)).ToList();
+            return _entityMapperService.Map<List<Projects>, List<ProjectDto>>(projects);
         }
 
         public async Task<ProjectDto?> GetProjectsByIdAsync(string projectId, CancellationToken cancellationToken = default)
@@ -68,14 +90,14 @@ namespace TSS.Application.Core.Services
             return null;
         }
 
-        public async Task<ProjectDto> SaveProjectAsync(ProjectDto projects, CancellationToken cancellationToken = default)
+        public async Task<ProjectDto> SaveProjectAsync(ProjectRequest projects, CancellationToken cancellationToken = default)
         {
-            var mappedResult = _entityMapperService.Map<ProjectDto, Projects>(projects);
+            var mappedResult = _entityMapperService.Map<ProjectRequest, Projects>(projects);
             var savedResult = await _projectRepository.SaveProjectAsync(mappedResult, cancellationToken);
             return _entityMapperService.Map<Projects, ProjectDto>(savedResult);
         }
 
-        public async Task<ProjectDto?> UpdateProjectAsync(string projectId, ProjectDto projects, CancellationToken cancellationToken = default)
+        public async Task<ProjectDto?> UpdateProjectAsync(string projectId, ProjectRequest projects, CancellationToken cancellationToken = default)
         {
             var project = await _projectRepository.GetProjectsByIdAsync(projectId, cancellationToken);
             if (project != null)

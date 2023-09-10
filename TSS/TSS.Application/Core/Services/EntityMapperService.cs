@@ -78,6 +78,7 @@ namespace TSS.Application.Core.Services
                        .ForMember(x => x.Status, m => m.MapFrom(t => t.User.Status))
                        .ForMember(x => x.Id, m => m.MapFrom(t => t.User.Id))
                        .ForMember(x => x.Role, m => m.MapFrom(t => t.User.Role))
+                       .ForMember(x => x.Projects, m => m.MapFrom(t => t.User.Projects))
                        .ReverseMap();
                 #endregion
 
@@ -102,13 +103,22 @@ namespace TSS.Application.Core.Services
                 #endregion
 
                 #region Projects Mapping
+                mapConfig.CreateMap<ProjectRequest, Projects>()
+                     .BeforeMap((s, d) => d.CreatedOn = DateTime.UtcNow)
+                     .BeforeMap((s, d) => d.CreatedBy = Guid.Parse(_tokenService.DecodeUserToken()?.UserId.ToString()!))
+                     .ReverseMap();
+
                 mapConfig.CreateMap<ProjectDto, Projects>()
                      .ForMember(x => x.Tickets, m => m.MapFrom(t => t.Tickets))
                      .ReverseMap();
                 #endregion
 
                 #region Tickets Mapping
-                mapConfig.CreateMap<TicketsDto, Tickets>()
+                mapConfig.CreateMap<TicketDto, Tickets>().ReverseMap();
+
+                mapConfig.CreateMap<TicketRequest, Tickets>()
+                     .BeforeMap((s, d) => d.CreatedOn = DateTime.UtcNow)
+                     .BeforeMap((s, d) => d.CreatedBy = Guid.Parse(_tokenService.DecodeUserToken()?.UserId.ToString()!))
                      .ReverseMap();
                 #endregion
 

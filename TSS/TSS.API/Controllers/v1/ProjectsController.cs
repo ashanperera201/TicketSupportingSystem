@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using TSS.Application.Core.Models.DTOs;
+using TSS.Application.Core.Models.Requests;
 using TSS.Application.Interfaces;
 
 namespace TSS.API.Controllers.v1
 {
+    [Authorize]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/projects")]
     [ApiController]
@@ -21,6 +23,24 @@ namespace TSS.API.Controllers.v1
         public ProjectsController(IProjectService projectService)
         {
             _projectService = projectService;
+        }
+
+        /// <summary>
+        /// Gets all projects.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult GetAllProjects()
+        {
+            try
+            {
+                var projects = _projectService.GetAllProjects(string.Empty);
+                return StatusCode(projects != null ? StatusCodes.Status200OK : StatusCodes.Status417ExpectationFailed, projects);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
         }
 
         /// <summary>
@@ -54,7 +74,7 @@ namespace TSS.API.Controllers.v1
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
         [HttpPost()]
-        public async Task<IActionResult> SaveProjectAsync([FromBody] ProjectDto project, CancellationToken cancellationToken)
+        public async Task<IActionResult> SaveProjectAsync([FromBody] ProjectRequest project, CancellationToken cancellationToken)
         {
             try
             {
@@ -82,7 +102,7 @@ namespace TSS.API.Controllers.v1
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
         [HttpPut("{projectId}")]
-        public async Task<IActionResult> UpdateProjectAsync(string projectId, [FromBody] ProjectDto project, CancellationToken cancellationToken)
+        public async Task<IActionResult> UpdateProjectAsync(string projectId, [FromBody] ProjectRequest project, CancellationToken cancellationToken)
         {
             try
             {

@@ -1,9 +1,21 @@
-﻿using TSS.Application.Core.Models.DTOs;
+﻿#region References
+using TSS.Application.Core.Models.DTOs;
+using TSS.Application.Core.Models.Requests;
+#endregion
+
+#region Namespace
 
 namespace TSS.Application.Interfaces
 {
     public interface IProjectService
     {
+        /// <summary>
+        /// Gets the projects asynchronous.
+        /// </summary>
+        /// <param name="customerId">The customer identifier.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns></returns>
+        public List<ProjectDto>? GetAllProjects(string customerId, CancellationToken cancellationToken = default);
         /// <summary>
         /// Filters the project query asynchronous.
         /// </summary>
@@ -16,7 +28,7 @@ namespace TSS.Application.Interfaces
         /// <param name="projects">The projects.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public Task<ProjectDto> SaveProjectAsync(ProjectDto projects, CancellationToken cancellationToken = default);
+        public Task<ProjectDto> SaveProjectAsync(ProjectRequest projects, CancellationToken cancellationToken = default);
         /// <summary>
         /// Updates the project asynchronous.
         /// </summary>
@@ -24,7 +36,7 @@ namespace TSS.Application.Interfaces
         /// <param name="projects">The projects.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public Task<ProjectDto?> UpdateProjectAsync(string projectId, ProjectDto projects, CancellationToken cancellationToken = default);
+        public Task<ProjectDto?> UpdateProjectAsync(string projectId, ProjectRequest projects, CancellationToken cancellationToken = default);
         /// <summary>
         /// Gets the projects by identifier asynchronous.
         /// </summary>
@@ -48,3 +60,4 @@ namespace TSS.Application.Interfaces
         public Task<bool> DeleteProjectByUserIdAsync(string userId, CancellationToken cancellationToken = default);
     }
 }
+#endregion
